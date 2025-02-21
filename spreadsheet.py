@@ -22,9 +22,7 @@ class Spreadsheet:
         response = requests.get(sheetdb_url, headers=header)
         if response.status_code == 200:
             self.data = response.json()
-            pprint(self.data)
             return self.data
         else:
-            print(f"Error {response.status_code}: {response.text}")
             return None
 

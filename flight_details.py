@@ -60,10 +60,10 @@ class Flight:
                     price = response.json()["data"][0]["price"]["grandTotal"]
                     prices[city["City"]] = price
                 else:
-                    print(f"Error: {response.status_code} for city {city['City']}: {response.text}")
+                    return None
             return prices
         else:
-            print("No access code")
+            return None
 
 
     
